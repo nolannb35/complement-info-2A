@@ -7,6 +7,9 @@ from dao.player_dao import PlayerDao
 from utils.log_utils import log
 
 
+from business_object.game import Game
+from business_object.game_mode import GameMode
+
 class GameService:
     """Service that manages games."""
 
@@ -90,3 +93,4 @@ class GameService:
             return
 
         p1.elo, p2.elo = cls.calculate_new_ratings(p1.elo, p2.elo, player_a_won=(p1 == winner))
+    
