@@ -93,7 +93,7 @@ Examples of endpoints, assuming that the environment variable `$API_URL` (e.g. `
 
 - `curl -L -X GET $API_URL/player | jq .`
 - `curl -L -X GET $API_URL/player/3 | jq .`
-- ```
+- ``` 
   curl -L -X POST "$API_URL/player" \
     -H "Content-Type: application/json" \
     -d '{
