@@ -45,5 +45,5 @@ def play_game(
 
 
 @router.get("/", tags=["Games"])
-async def get_games(id_player: int = None):
-    return game_service.find_all_by_player(id_player=id_player)
+async def get_games(id_player: int = None, game_service=Depends(get_game_service)):
+    return game_service.find_all_by_player(id_player=id_player, )

@@ -14,3 +14,13 @@ class GameResponse(BaseModel):
     winner: str | None
     new_elo1: int
     new_elo2: int
+
+        
+class GameReadModel(BaseModel):
+    id_game: int
+    game_mode: str
+    description: str
+    timestamp: datetime
+    player1 : PlayerReadModel
+    player2 : PlayerReadModel
+    winner : PlayerReadModel
