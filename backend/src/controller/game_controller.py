@@ -5,6 +5,7 @@ from service.game_service import GameService
 from utils.log_utils import get_logger
 from utils.security import verify_token
 
+
 router = APIRouter()
 
 logger = get_logger(__name__)
@@ -41,3 +42,8 @@ def play_game(
         new_elo1=game.player1.elo,
         new_elo2=game.player2.elo,
     )
+
+
+@router.get("/", tags=["Games"])
+async def get_games(id_player: int = None):
+    return game_service.find_all_by_player(id_player=id_player)
